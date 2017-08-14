@@ -1,0 +1,7 @@
+//program that counts up the number of vowels contained in the string s. Valid vowels are: 'a', 'e', 'i', 'o', and 'u'.
+
+numvowels=0
+for char in s:
+    if char == "a" or char == "e" or char == "i" or char == "o" or char == "u":
+        numvowels += 1
+print("nunber of vowels: " + str(numvowels))
