@@ -1,0 +1,26 @@
+'''
+    L1 and L2: lists containing integers and strings
+    Returns False if L1 and L2 are not permutations of each other. 
+            If they are permutations of each other, returns a 
+            tuple of 3 items in this order: 
+            the element occurring most, how many times it occurs, and its type
+    '''
+
+def is_list_permutation(L1,L2):
+    if len(L1) != len(L2):
+        return False
+    if len(L1) == 0:
+        return (None,None,None)
+    max_item = None
+    max_count = 0
+    d = dict()
+    for i in L1:
+        d[i] = d.get(i,0) + 1
+        if d[i] > max_count:
+            max_count += 1
+            max_item = i
+    for i in L2:
+        d[i] = d.get(i,0) - 1
+        if d[i] == -1:
+            return False
+    return (max_item,max_count,type(max_item))
