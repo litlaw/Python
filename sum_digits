@@ -1,0 +1,15 @@
+def sum_digits(s):
+    """ assumes s a string
+       Returns an int that is the sum of all of the digits in s.
+       If there are no digits in s it raises a ValueError exception. """
+    sum = 0
+    valueerr = 0
+    for i in s:
+        try:
+            sum += int(i)
+        except:
+            valueerr += 1
+    if valueerr != len(s):
+        return sum
+    else:
+        raise ValueError
