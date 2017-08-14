@@ -1,0 +1,20 @@
+//function called dict_invert that takes in a dictionary with immutable values and returns the inverse of the dictionary. 
+//The inverse of a dictionary d is another dictionary whose keys are the unique dictionary values in d. 
+//The value for a key in the inverse dictionary is a sorted list (increasing order) 
+//of all keys in d that have the same value in d.
+
+def dict_invert(d):
+    '''
+    d: dict
+    Returns an inverted dictionary according to the instructions above
+    '''
+    copy = {}
+ 
+    for k, v in d.items():
+    	if v in copy.keys():
+    		copy[v].append(k)
+    		copy[v] = sorted(copy[v])
+    	else:
+    		copy[v] = [k]
+ 
+    return copy
